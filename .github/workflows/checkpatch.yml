@@ -1,0 +1,34 @@
+name: checkpatch
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    paths:
+    - 'bsp_sedi/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: write
+    steps:
+    - name: Git Checkout
+      uses: actions/checkout@v3
+
+    - name: Checkpatch Download
+      shell: bash
+      run: |
+        wget https://github.com/zephyrproject-rtos/zephyr/raw/main/scripts/checkpatch.pl -O ./checkpatch.pl
+        chmod +x ./checkpatch.pl
+        wget https://github.com/zephyrproject-rtos/zephyr/raw/main/.checkpatch.conf -O ./.checkpatch.conf
+        wget https://github.com/zephyrproject-rtos/zephyr/raw/main/scripts/spelling.txt -O ./spelling.txt
+        echo "--ignore PREFER_ALIGNED" >> ./.checkpatch.conf
+        echo "--ignore NEW_TYPEDEFS" >> ./.checkpatch.conf
+
+    - name: Checkpath Run
+      shell: bash
+      run: |
+        err_num=$(echo "total: 1 errors, 28 warnings, 1199 lines checked" | awk '/[0-9]+ errors/ {print $2}')
+        echo $err_num
+        git show HEAD
