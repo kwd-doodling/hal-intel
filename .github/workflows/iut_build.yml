@@ -26,8 +26,6 @@ jobs:
       - name: Checkout Zephyr
         run: |
           west init
-          west update
-          mv ./modules/hal/intel ./modules/hal/intel_zephyr
           
       - name: Checkout Intel HAL
         uses: actions/checkout@v3
