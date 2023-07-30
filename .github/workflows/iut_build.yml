@@ -5,7 +5,7 @@ on:
     branches: [ main ]
     
 jobs:
-  check-errno:
+  iut_build:
     runs-on: ubuntu-22.04
     container:
       image: ghcr.io/zephyrproject-rtos/ci:v0.26.4
@@ -21,10 +21,20 @@ jobs:
           #        GitHub comes up with a fundamental fix for this problem.
           git config --global --add safe.directory ${GITHUB_WORKSPACE}
 
-      - name: checkout
-        uses: actions/checkout@v3
-        
-      - name: test
+      - name: Checkout Zephyr
         run: |
-          ls -l
+          west init zephyrproject
+          cd ./zephyrproject/
+          west update
+          mv ./modules/hal/intel ./modules/hal/intel_zephyr
+          
+      - name: Checkout Intel HAL
+        uses: actions/checkout@v3
+        with:
+          path: zephyrproject/modules/hal/intel
+        
+      - name: Build IUT APP
+        run: |
+          cd zephyrproject
+          west build -b intel_ish_5_4_1 modules/hal/intel/zephyr/iut_test
     
