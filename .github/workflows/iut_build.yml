@@ -3,6 +3,8 @@ name: iut_build
 on:
   pull_request:
     branches: [ main ]
+  schedule:
+    - cron: '0 3 * * 0,3'
     
 jobs:
   iut_build:
@@ -23,18 +25,18 @@ jobs:
 
       - name: Checkout Zephyr
         run: |
-          west init zephyrproject
-          cd ./zephyrproject/
+          west init
           west update
           mv ./modules/hal/intel ./modules/hal/intel_zephyr
           
       - name: Checkout Intel HAL
         uses: actions/checkout@v3
         with:
-          path: zephyrproject/modules/hal/intel
+          path: modules/hal/intel
         
       - name: Build IUT APP
         run: |
-          cd zephyrproject
-          west build -b intel_ish_5_4_1 modules/hal/intel/zephyr/iut_test
+          west build -b intel_ish_5_4_1 modules/hal/intel/zephyr/iut_test build_5_4_1
+          west build -b intel_ish_5_4_1 modules/hal/intel/zephyr/iut_test build_5_6_0
+          west build -b intel_ish_5_4_1 modules/hal/intel/zephyr/iut_test build_5_8_0
     
