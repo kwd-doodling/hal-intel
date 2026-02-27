@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['transfer_5fmode_798',['transfer_mode',['../structsedi__uart__rs485__config__t.html#a3f04dbb5eff29650a90fab843c4ac702',1,'sedi_uart_rs485_config_t']]]
+  ['year_974',['year',['../structsedi__rtc__time__t.html#a53dc7f23808f268cdabf5f1b191cbac6',1,'sedi_rtc_time_t']]]
 ];

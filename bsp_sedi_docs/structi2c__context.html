@@ -73,9 +73,11 @@ Collaboration diagram for i2c_context:</div>
 <div class="dyncontent">
 <div class="center"><img src="structi2c__context__coll__graph.png" border="0" usemap="#ai2c__context_coll__map" alt="Collaboration graph"/></div>
 <map name="ai2c__context_coll__map" id="ai2c__context_coll__map">
-<area shape="rect" title=" " alt="" coords="112,95,209,121"/>
-<area shape="rect" href="structsedi__i2c__status__t.html" title="I2C Status." alt="" coords="5,5,140,32"/>
-<area shape="rect" href="structsedi__i2c__capabilities__t.html" title="I2C Driver Capabilities." alt="" coords="164,5,333,32"/>
+<area shape="rect" title=" " alt="" coords="189,228,287,255"/>
+<area shape="rect" href="structsedi__i2c__status__t.html" title="I2C Status." alt="" coords="5,139,140,165"/>
+<area shape="rect" href="structsedi__i2c__bus__info__t.html" title="I2C bus clock frequency configuration for each mode." alt="" coords="269,139,418,165"/>
+<area shape="rect" href="structsedi__i2c__bus__clk__t.html" title="I2C bus clock frequency configuration." alt="" coords="139,5,281,32"/>
+<area shape="rect" href="structsedi__i2c__capabilities__t.html" title="I2C Driver Capabilities." alt="" coords="443,139,612,165"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -114,21 +116,27 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>isr_flag</b></td>
 <tr class="memitem:ae1e392974bf35b8df9be58c28efe72af"><td class="memItemLeft" align="right" valign="top"><a id="ae1e392974bf35b8df9be58c28efe72af"></a>
 uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>isr_data</b></td></tr>
 <tr class="separator:ae1e392974bf35b8df9be58c28efe72af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a02b5173d5ecfbaab7e660beece720615"><td class="memItemLeft" align="right" valign="top"><a id="a02b5173d5ecfbaab7e660beece720615"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>dma</b></td></tr>
-<tr class="separator:a02b5173d5ecfbaab7e660beece720615"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a256bf32d9f7d0338e94d4edb0a5c8580"><td class="memItemLeft" align="right" valign="top"><a id="a256bf32d9f7d0338e94d4edb0a5c8580"></a>
+uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>phy_data_cmd</b></td></tr>
+<tr class="separator:a256bf32d9f7d0338e94d4edb0a5c8580"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84925de23c37418056471fa29affb743"><td class="memItemLeft" align="right" valign="top"><a id="a84925de23c37418056471fa29affb743"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>tx_dma_dev</b></td></tr>
+<tr class="separator:a84925de23c37418056471fa29affb743"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a934123d63964a55d820e924ecaa1a015"><td class="memItemLeft" align="right" valign="top"><a id="a934123d63964a55d820e924ecaa1a015"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>tx_dma_chan</b></td></tr>
 <tr class="separator:a934123d63964a55d820e924ecaa1a015"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a228f71d1363afeb4b0c9b76c4b564a2b"><td class="memItemLeft" align="right" valign="top"><a id="a228f71d1363afeb4b0c9b76c4b564a2b"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>tx_dma_handshake</b></td></tr>
+<tr class="separator:a228f71d1363afeb4b0c9b76c4b564a2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a024e90ef8bacb521b693a7a9daf68e57"><td class="memItemLeft" align="right" valign="top"><a id="a024e90ef8bacb521b693a7a9daf68e57"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>rx_dma_dev</b></td></tr>
+<tr class="separator:a024e90ef8bacb521b693a7a9daf68e57"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3b1ba521cc62e4b884e79198a8a19ae0"><td class="memItemLeft" align="right" valign="top"><a id="a3b1ba521cc62e4b884e79198a8a19ae0"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>rx_dma_chan</b></td></tr>
 <tr class="separator:a3b1ba521cc62e4b884e79198a8a19ae0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a66569199cc56979b6aded1304549b770"><td class="memItemLeft" align="right" valign="top"><a id="a66569199cc56979b6aded1304549b770"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>dma_is_tx</b></td></tr>
-<tr class="separator:a66569199cc56979b6aded1304549b770"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1a7f3f71bcb77db063f3d9eb1ead3ff"><td class="memItemLeft" align="right" valign="top"><a id="ad1a7f3f71bcb77db063f3d9eb1ead3ff"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>dma_handshake</b></td></tr>
-<tr class="separator:ad1a7f3f71bcb77db063f3d9eb1ead3ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0567e6260901133c588ac81d333dcc04"><td class="memItemLeft" align="right" valign="top"><a id="a0567e6260901133c588ac81d333dcc04"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>rx_dma_handshake</b></td></tr>
+<tr class="separator:a0567e6260901133c588ac81d333dcc04"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0aa968b58a7113c573a61481593da925"><td class="memItemLeft" align="right" valign="top"><a id="a0aa968b58a7113c573a61481593da925"></a>
 dma_memory_type_t&#160;</td><td class="memItemRight" valign="bottom"><b>tx_memory_type</b></td></tr>
 <tr class="separator:a0aa968b58a7113c573a61481593da925"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -138,6 +146,12 @@ dma_memory_type_t&#160;</td><td class="memItemRight" valign="bottom"><b>rx_memor
 <tr class="memitem:af1e91a78a8910a224caa61ec39e8b2b4"><td class="memItemLeft" align="right" valign="top"><a id="af1e91a78a8910a224caa61ec39e8b2b4"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>speed</b></td></tr>
 <tr class="separator:af1e91a78a8910a224caa61ec39e8b2b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94c44800783326478620fc099b9a7cfc"><td class="memItemLeft" align="right" valign="top"><a id="a94c44800783326478620fc099b9a7cfc"></a>
+<a class="el" href="structsedi__i2c__bus__clk__t.html">sedi_i2c_bus_clk_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>clk_info</b></td></tr>
+<tr class="separator:a94c44800783326478620fc099b9a7cfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa636bb792274053f2a17803b5cf13a32"><td class="memItemLeft" align="right" valign="top"><a id="aa636bb792274053f2a17803b5cf13a32"></a>
+<a class="el" href="structsedi__i2c__bus__info__t.html">sedi_i2c_bus_info_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>bus_info</b></td></tr>
+<tr class="separator:aa636bb792274053f2a17803b5cf13a32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this struct was generated from the following file:<ul>
 <li>bsp_sedi/drivers/i2c/sedi_i2c_dw_apb_200a.c</li>
